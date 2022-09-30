@@ -1,4 +1,4 @@
-# hacktoberfest_2022
+# Hacktoberfest 2022
 
 Hello everyone,
 
