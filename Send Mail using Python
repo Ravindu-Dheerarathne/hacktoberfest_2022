@@ -1,0 +1,26 @@
+#Simple Function written which will be able to send email to anyone 
+
+#importing built-in smtplib module for sending emails 
+import smtplib #smtp meaning Simple Mail Transfer Protocol
+
+li = list(input("Enter the email ids: ").split())
+
+def send_email(li):
+
+  for i in li:
+  
+      server = smtplib.SMTP('smtp.gmail.com', 587) #email service and port number (For Gmail, we use port number 587.)
+
+      server.starttls() #creating sercure connection by using Transport Layer Security (TLS)
+      
+      server.login("sender_email_id", "sender_email_id_password") #email id and password of the sender
+      
+      message = "Message_you_need_to_send"
+      
+      server.sendmail("sender_email_id", i, message)
+      
+      server.quit()
+  
+  return 'Mail sent'
+
+send_email(li)
